@@ -1,0 +1,43 @@
+.MuiDataGrid-footerContainer {
+  direction: ltr;
+}
+
+.custom-header {
+  font-weight: bold;
+  font-size: small;
+}
+
+.MuiDataGrid-columnHeaders {
+  background-color: cadetblue;
+}
+
+.MuiDataGrid-row {
+  background-color: rgb(139, 164, 139, 0.5);
+  color: white;
+}
+
+.MuiDataGrid-root {
+  /* width: 90%; */
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.css-rtrcn9-MuiTablePagination-root {
+  color: white;
+  font-size: large;
+}
+
+.css-9fefbs-MuiGrid-root {
+  background-image: url("https://cdn.pixabay.com/photo/2015/06/15/20/21/register-810546_1280.jpg");
+  background-size: "cover";
+  background-repeat: round;
+}
+
+.css-vj1n65-MuiGrid-roo {
+  align-items: center;
+}
+
+.MuiTablePagination-selectLabel {
+  display: none !important ;
+}

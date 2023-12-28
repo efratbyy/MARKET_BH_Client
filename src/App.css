@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Fredoka";
+  src: url("../public/assets/fonts/Fredoka-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Fredoka", sans-serif !important; /* Use the font in your styles */
+}
+
+.MuiTypography-root {
+  font-family: "Fredoka", sans-serif !important; /* Use the font in your styles */
+}
+
+.MuiInputBase-input {
+  font-family: "Fredoka", sans-serif !important; /* Use the font in your styles */
+}
+.MuiButtonBase-root {
+  font-family: "Fredoka", sans-serif !important; /* Use the font in your styles */
+}

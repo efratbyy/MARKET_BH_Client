@@ -1,0 +1,23 @@
+export type ProductClientType = {
+  title: string;
+  brand: string;
+  barcode: string;
+  categoryCode: [string];
+  price: number;
+  imageUrl: string;
+  imageAlt: string;
+  ingredients: string;
+  weightTopDisplay: number;
+  weightUnitTopDisplay: string;
+  weight: number;
+  weightUnit: string;
+  divideBy: number;
+  isSodium: boolean;
+  isSugar: boolean;
+  isSaturatedFat: boolean;
+  isGreenMark: boolean;
+  isSupervised: boolean;
+  content: string;
+  manufacturingCountry: string;
+  inventory: number;
+};
