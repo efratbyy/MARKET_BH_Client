@@ -36,7 +36,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "heroku-prebuild": "npm cache clean --forcec && npm install --force",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
