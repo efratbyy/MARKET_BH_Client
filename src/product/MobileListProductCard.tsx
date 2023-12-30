@@ -28,12 +28,7 @@ const MobileListProductCard: React.FC<Props> = ({
   const [totalAmount, setTotalAmount] = useState(0);
   const { title, barcode, brand, image, price, details, inventory } = product;
   const { user } = useUser();
-  // const [isDialogOpen, setDialog] = useState(false);
   const { cart, updateCartProvider } = useCartProvider();
-
-  // const openDialog = () => {
-  //   setDialog(true);
-  // };
 
   const navigate = useNavigate();
 
@@ -64,10 +59,10 @@ const MobileListProductCard: React.FC<Props> = ({
               item
               xs={2.5}
               sx={{
-                textAlign: "center", // Center horizontally
+                textAlign: "center",
                 display: "flex",
-                alignItems: "center", // Center vertically
-                justifyContent: "center", // Center horizontally
+                alignItems: "center",
+                justifyContent: "center",
                 padding: "15px",
               }}
             >
@@ -245,7 +240,6 @@ const MobileListProductCard: React.FC<Props> = ({
                           borderBottomLeftRadius: "0px",
                           backgroundColor: "#5b9822",
                           minWidth: "0px !important",
-                          // width: "50px",
                           height: "30px",
                           "&:hover": {
                             backgroundColor: "#333",
@@ -262,7 +256,6 @@ const MobileListProductCard: React.FC<Props> = ({
                         disabled
                         sx={{
                           minWidth: "0px !important",
-                          // width: "50px",
                           height: "30px",
                           borderRadius: "0px",
                         }}
@@ -283,7 +276,6 @@ const MobileListProductCard: React.FC<Props> = ({
                           borderBottomLeftRadius: "10px !important",
                           backgroundColor: "#5b9822",
                           minWidth: "0px !important",
-                          // width: "50px",
                           height: "30px",
                           "&:hover": {
                             backgroundColor: "#333",

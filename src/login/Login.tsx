@@ -92,7 +92,6 @@ const Login = () => {
         container
         spacing={3}
         direction="column"
-        // alignItems="center"
         justifyContent="center"
         sx={{
           position: "relative",
@@ -125,7 +124,7 @@ const Login = () => {
               width: "300px",
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 1)", // Change border color to fully opaque
+                  borderColor: "rgba(255, 255, 255, 1)",
                 },
               },
             }}
@@ -149,7 +148,7 @@ const Login = () => {
               width: "300px",
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 1)", // Change border color to fully opaque
+                  borderColor: "rgba(255, 255, 255, 1)",
                 },
               },
             }}
@@ -182,7 +181,7 @@ const Login = () => {
               }}
               variant="body2"
             >
-              שכחת סיסמה?
+              שכחתי סיסמה?
             </Typography>
           </Button>
         </Grid>

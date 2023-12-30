@@ -189,7 +189,7 @@ const EditProductForm = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(0, 0, 0, 1)",
                     },
                   },
                 }}
@@ -239,8 +239,6 @@ const EditProductForm = () => {
                 color="success"
                 fullWidth
                 margin="normal"
-                // value={formData.categoryCode}
-                // onChange={handleChange}
                 value={
                   formData.categoryCode.length > 0
                     ? formData.categoryCode[0]
@@ -278,7 +276,7 @@ const EditProductForm = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(0, 0, 0, 1)",
                     },
                   },
                 }}
@@ -297,7 +295,7 @@ const EditProductForm = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(0, 0, 0, 1)",
                     },
                   },
                 }}
@@ -316,7 +314,7 @@ const EditProductForm = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(0, 0, 0, 1)",
                     },
                   },
                 }}
@@ -492,7 +490,7 @@ const EditProductForm = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(0, 0, 0, 1)",
                     },
                   },
                 }}

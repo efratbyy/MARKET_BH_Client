@@ -75,7 +75,7 @@ const CreateNewPassword = () => {
         .rule({
           message:
             'user "password" must be at least 8 characters long and contain an uppercase letter, a lowercase letter, at least 4 numbers and one of the following characters !@#$%^&*-',
-        }) // /((?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{7,20})/
+        })
         .required()
         .validate(value);
 
@@ -95,9 +95,8 @@ const CreateNewPassword = () => {
         navigate(`${ROUTES.GENERAL_MESSAGE}`, {
           replace: true,
           state: {
-            // Pass your props here
+            // Pass the props here (more props can be added)
             text: "הסיסמה עודכנה בהצלחה! יש לבצע כניסה...",
-            // Add more props as needed
           },
         });
       });
@@ -189,7 +188,7 @@ const CreateNewPassword = () => {
                   width: "300px",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(255, 255, 255, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(255, 255, 255, 1)",
                     },
                   },
                 }}
@@ -227,7 +226,7 @@ const CreateNewPassword = () => {
                   width: "300px",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(255, 255, 255, 1)", // Change border color to fully opaque
+                      borderColor: "rgba(255, 255, 255, 1)",
                     },
                   },
                 }}

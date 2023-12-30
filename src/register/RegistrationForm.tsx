@@ -130,13 +130,13 @@ const RegistrationForm: React.FC = () => {
       <Grid
         sx={{
           position: "relative !important",
-          backgroundColor: "#fff", // Set your desired background color
+          backgroundColor: "#fff",
           zIndex: 1,
           padding: "16px !important",
           overflowY: "scroll",
           height: "100vh",
           backgroundAttachment: "fixed",
-          backgroundImage: "url(/assets/images/register.png)", // Set your background image
+          backgroundImage: "url(/assets/images/register.png)",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -167,7 +167,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -186,7 +186,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -205,7 +205,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -224,7 +224,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -243,7 +243,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -275,7 +275,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -294,7 +294,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -313,7 +313,7 @@ const RegistrationForm: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}

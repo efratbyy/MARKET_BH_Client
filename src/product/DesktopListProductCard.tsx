@@ -54,10 +54,10 @@ const DesktopListProductCard: React.FC<Props> = ({
         item
         xs={2}
         sx={{
-          textAlign: "center", // Center horizontally
+          textAlign: "center",
           display: "flex",
-          alignItems: "center", // Center vertically
-          justifyContent: "center", // Center horizontally
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <img
@@ -73,12 +73,7 @@ const DesktopListProductCard: React.FC<Props> = ({
 
       <Grid item xs={3.9}>
         {/* Product Name */}
-        <Grid
-          item
-          xs={12}
-          // justifyContent={"space-between"}
-          sx={{ fontSize: "17px" }}
-        >
+        <Grid item xs={12} sx={{ fontSize: "17px" }}>
           {title}
         </Grid>
         {/* Product Amount */}
@@ -227,7 +222,6 @@ const DesktopListProductCard: React.FC<Props> = ({
                   borderBottomLeftRadius: "0px",
                   backgroundColor: "#5b9822",
                   minWidth: "0px !important",
-                  // width: "50px",
                   height: "50px",
                   "&:hover": {
                     backgroundColor: "#333",
@@ -244,7 +238,6 @@ const DesktopListProductCard: React.FC<Props> = ({
                 disabled
                 sx={{
                   minWidth: "0px !important",
-                  // width: "50px",
                   height: "50px",
                   borderRadius: "0px",
                 }}
@@ -261,7 +254,6 @@ const DesktopListProductCard: React.FC<Props> = ({
                   borderBottomLeftRadius: "10px !important",
                   backgroundColor: "#5b9822",
                   minWidth: "0px !important",
-                  // width: "50px",
                   height: "50px",
                   "&:hover": {
                     backgroundColor: "#333",

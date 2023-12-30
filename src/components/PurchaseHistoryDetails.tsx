@@ -15,11 +15,11 @@ import {
   TableRow,
 } from "@mui/material";
 import PurchaseHistoryDetailsBreadCrumb from "./PurchesHistoryDetailsBreadCrumb";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
 const PurchaseHistoryDetails = () => {
   const { user } = useUser();
   const [searchParams] = useSearchParams();
-  // const orderNumber = searchParams.get("order_number");
   const [orderNumber, setOrderNumber] = useState<string | null>(
     searchParams.get("order_number")
   );
@@ -31,19 +31,17 @@ const PurchaseHistoryDetails = () => {
   const handlePurchaseHistoryDetails = useCallback(
     async (userId: string, orderNumber: string) => {
       try {
-        //setLoading(true);
         if (userId) {
           const purchaseHistoryDetails = await getPurchaseHistoryDetailsApi(
             userId,
             orderNumber
           );
 
-          //requestStatus(false, null, cart);
           return Promise.resolve(purchaseHistoryDetails);
         }
         return undefined;
       } catch (error) {
-        //if (typeof error === "string") requestStatus(false, error, null);
+        console.log(error);
       }
     },
     []
@@ -81,14 +79,14 @@ const PurchaseHistoryDetails = () => {
     color: "black",
     textAlign: "center",
     padding: "8px",
-    border: "1px solid black !important", // Add black border to regular cells
+    border: "1px solid black !important",
     orderRadius: "2px",
   };
 
   const cellStyle = {
     textAlign: "center",
     padding: "8px",
-    border: "1px solid black !important", // Add black border to regular cells
+    border: "1px solid black !important",
     orderRadius: "2px",
   };
 
@@ -100,16 +98,11 @@ const PurchaseHistoryDetails = () => {
           opacity: 0.2,
           backgroundImage: `url("assets/images/order-details.png")`,
           backgroundSize: "cover",
-          // backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           position: "fixed",
           minHeight: "100vh",
-          // top: 0,
-          // left: 0,
           width: "100%",
-          // overflowY: "scroll",
           bottom: 0,
-          // height: "93.5%",
           zIndex: -1,
           backgroundAttachment: "fixed",
         }}
@@ -119,12 +112,11 @@ const PurchaseHistoryDetails = () => {
         container
         spacing={3}
         direction="column"
-        // alignItems="center"
-        justifyContent="center"
+        // justifyContent="center"
         sx={{
           position: "relative",
           minHeight: "100vh",
-          paddingX: "10%",
+          paddingTop: "10%",
           width: "100%",
           height: "30%",
         }}
@@ -149,7 +141,7 @@ const PurchaseHistoryDetails = () => {
           sx={{
             fontSize: "25px",
             color: "blue",
-            padding: "10px",
+            paddingRight: "15%",
             zIndex: 1,
             position: "relative",
           }}
@@ -157,20 +149,16 @@ const PurchaseHistoryDetails = () => {
           סכום ההזמנה: ₪{totalAmountInOrder.toFixed(2)}
         </Grid>
 
-        <Grid
-          item
-          lg={6}
-          xs={10}
-          // sx={{ marginRight: "auto", marginLeft: "auto" }}
-        >
+        <Grid item lg={6} xs={10}>
           <TableContainer
-            //component={Paper}
             sx={{
               alignItems: "center",
               display: "flex",
-              border: "1px solid black", // Add black border
-              borderRadius: "2px", // Add border radius
-              overflow: "hidden", // Hide overflow if border radius is applied
+              border: "1px solid black",
+              borderRadius: "2px",
+              overflow: "hidden",
+              justifyContent: "center",
+              alignContent: "center",
             }}
           >
             <Table>
@@ -241,7 +229,7 @@ const PurchaseHistoryDetails = () => {
                 ))}
               </TableBody>
             </Table>
-          </TableContainer>{" "}
+          </TableContainer>
         </Grid>
       </Grid>
       <Footer />

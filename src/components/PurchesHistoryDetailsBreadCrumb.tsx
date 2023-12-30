@@ -21,13 +21,7 @@ const PurchaseHistoryDetailsBreadCrumb: React.FC<Props> = ({ orderNumber }) => {
       היסטוריית הזמנות
     </Link>,
 
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      //   onClick={() => {}}
-    >
+    <Link underline="hover" key="2" color="inherit" href="/">
       הזמנה מספר {orderNumber}
     </Link>,
   ];

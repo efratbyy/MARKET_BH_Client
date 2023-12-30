@@ -34,12 +34,10 @@ const CategoriesBottomNavBar: React.FC = () => {
 
   const handleGetCategories = useCallback(async () => {
     try {
-      //setLoading(true);
       const categories = await getCategoriesApi();
-      //requestStatus(false, null, cart);
       return Promise.resolve(categories);
     } catch (error) {
-      //if (typeof error === "string") requestStatus(false, error, null);
+      console.log(error);
     }
   }, []);
 
@@ -235,7 +233,6 @@ const CategoriesBottomNavBar: React.FC = () => {
   return (
     <div>
       <BottomNavigationAction
-        // onClick={() => navigate(ROUTES.ROOT)}
         onClick={() => setBottomDrawerOpen(true)}
         label="מוצרים"
         icon={

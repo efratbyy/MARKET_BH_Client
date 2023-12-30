@@ -11,7 +11,6 @@ import { useSearchParams } from "react-router-dom";
 import { Checkbox, Divider, FormControlLabel, Grid } from "@mui/material";
 import useProducts from "../product/useProducts";
 import { Button } from "@mui/base";
-import SvgSodium from "../product/SvgSodium";
 
 const DataFilter = () => {
   const [openSort, setOpenSort] = useState(true);

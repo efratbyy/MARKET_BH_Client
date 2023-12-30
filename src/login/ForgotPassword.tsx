@@ -71,9 +71,8 @@ const ForgotPassword = () => {
       navigate(`${ROUTES.GENERAL_MESSAGE}`, {
         replace: true,
         state: {
-          // Pass your props here
+          // Pass the props here (more props can be added)
           text: "מייל נשלח בהצלחה!",
-          // Add more props as needed
         },
       }); // { replace: true } - This means that if the user goes back in their browser, they won't revisit the form page
     } catch (error) {

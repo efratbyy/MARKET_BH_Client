@@ -29,18 +29,14 @@ const HomePage = () => {
 
   const handleGetTranslatedCategory = useCallback(async () => {
     try {
-      //setLoading(true);
       if (category_code) {
         const translatedCategory = await getTranslatedCategoryCodeApi(
           category_code
         );
-        //requestStatus(false, null, cart);
         setTranslated_category_code(translatedCategory);
       }
       return undefined;
-    } catch (error) {
-      //if (typeof error === "string") requestStatus(false, error, null);
-    }
+    } catch (error) {}
   }, [category_code, translated_category_code]);
 
   useEffect(() => {
@@ -54,10 +50,10 @@ const HomePage = () => {
       <Grid
         container
         sx={{
-          background: `url("/assets/images/vegetables.png")`, // Replace with your image path
+          background: `url("/assets/images/vegetables.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "300px", //
+          minHeight: "300px",
         }}
       ></Grid>
       <Grid container sx={{ marginBottom: "27px" }}>
@@ -145,7 +141,6 @@ const HomePage = () => {
               xs={5}
               md={6}
               sx={{
-                // display: { xs: "none", lg: "flex" },
                 justifyItems: "center",
                 alignItems: "center",
               }}

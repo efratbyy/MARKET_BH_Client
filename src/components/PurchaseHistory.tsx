@@ -9,7 +9,6 @@ import { Grid, Typography } from "@mui/material";
 import Navbar from "../navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-//import Sheet from "styled-components/dist/sheet";
 
 const PurchaseHistory = () => {
   const { user } = useUser();
@@ -21,17 +20,13 @@ const PurchaseHistory = () => {
 
   const handlePurchaseHistory = useCallback(async (userId: string) => {
     try {
-      //setLoading(true);
       if (userId) {
         const purchaseHistory = await getPurchaseHistoryApi(userId);
 
-        //requestStatus(false, null, cart);
         return Promise.resolve(purchaseHistory);
       }
       return undefined;
-    } catch (error) {
-      //if (typeof error === "string") requestStatus(false, error, null);
-    }
+    } catch (error) {}
   }, []);
 
   const columns: GridColDef[] = [
@@ -70,7 +65,6 @@ const PurchaseHistory = () => {
         .then((data) => {
           setPurchaseHistory(data);
 
-          //
           let initRows: any[] = [];
           let inc = 1;
           data?.forEach((purchase) => {
@@ -127,6 +121,7 @@ const PurchaseHistory = () => {
           marginBottom: 2,
           color: "primary.main",
           textAlign: "center",
+          paddingTop: "35%",
         }}
       >
         הסטוריית הזמנות

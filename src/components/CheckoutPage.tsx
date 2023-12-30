@@ -15,10 +15,7 @@ import { useSnack } from "../providers/SnackbarProvider";
 import Footer from "../footer/Footer";
 import creditCardSchema from "../models/joiValidation/CreditCardSchema";
 import CreditCardInput from "react-credit-card-input";
-import {
-  emailPaymentDetailsApi,
-  // emailToClientApi,
-} from "../apiService/emailApiService";
+import { emailPaymentDetailsApi } from "../apiService/emailApiService";
 import { useUser } from "../providers/UserProvider";
 import { useCartProvider } from "../providers/CartProvider";
 import CheckoutPageBreadCrumb from "./CheckoutPageBreadCrumb";
@@ -183,7 +180,7 @@ const CheckoutPage: React.FC = () => {
     <>
       <Grid
         sx={{
-          backgroundImage: "url(/assets/images/creditCard.png)", // Set your background image
+          backgroundImage: "url(/assets/images/creditCard.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "fixed",
@@ -238,7 +235,7 @@ const CheckoutPage: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}
@@ -303,7 +300,7 @@ const CheckoutPage: React.FC = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)", // Change border color to fully opaque
+                    borderColor: "rgba(0, 0, 0, 1)",
                   },
                 },
               }}

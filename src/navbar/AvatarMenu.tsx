@@ -23,7 +23,7 @@ const AvatarMenu = () => {
   };
 
   const handleLogout = () => {
-    removeUser(); // remove from localStorage
+    removeUser(); // remove user from localStorage
     setUser(null);
     setToken(null);
     handleCloseUserMenu();

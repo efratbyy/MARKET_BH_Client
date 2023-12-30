@@ -122,15 +122,12 @@ const ShoppingCart = () => {
                     alignContent="center"
                     alignItems="center"
                     justifyContent="center"
-                    // padding={"3%"}
                   >
                     <ButtonGroup
                       orientation="vertical"
                       variant="contained"
                       sx={{
-                        // width: "70%",
-                        // height: "100%",
-                        boxShadow: 0, // Set the desired width to make it smaller
+                        boxShadow: 0,
                       }}
                     >
                       <Button
@@ -142,10 +139,10 @@ const ShoppingCart = () => {
                           minWidth: "0px !important",
                           width: "32px",
                           "&:hover": {
-                            backgroundColor: "#333", // Change color on hover
+                            backgroundColor: "#333",
                           },
                           "&:active": {
-                            backgroundColor: "#333", // Change color on press
+                            backgroundColor: "#333",
                           },
                         }}
                       >
@@ -170,10 +167,10 @@ const ShoppingCart = () => {
                           minWidth: "0px !important",
                           width: "32px",
                           "&:hover": {
-                            backgroundColor: "#333", // Change color on hover
+                            backgroundColor: "#333",
                           },
                           "&:active": {
-                            backgroundColor: "#333", // Change color on press
+                            backgroundColor: "#333",
                           },
                         }}
                       >
@@ -187,10 +184,10 @@ const ShoppingCart = () => {
                     xs={2}
                     md={2}
                     sx={{
-                      textAlign: "center", // Center horizontally
+                      textAlign: "center",
                       display: "flex",
-                      alignItems: "center", // Center vertically
-                      justifyContent: "center", // Center horizontally
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     <div>
@@ -220,11 +217,6 @@ const ShoppingCart = () => {
                           border: "1px solid rgba(0,0,0,0.3)",
                           borderRadius: "2px",
                         }}
-                        // onKeyDown={(e) => {
-                        //   if (e.key === " ") {
-                        //     e.preventDefault(); // Prevent the default behavior of the space key
-                        //   }
-                        // }}
                       ></Input>
                     </div>
                   </Grid>
@@ -234,10 +226,10 @@ const ShoppingCart = () => {
                     xs={2}
                     md={2}
                     sx={{
-                      textAlign: "center", // Center horizontally
+                      textAlign: "center",
                       display: "flex",
-                      alignItems: "center", // Center vertically
-                      justifyContent: "center", // Center horizontally
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     ₪{item.price.toFixed(2)}
@@ -248,10 +240,10 @@ const ShoppingCart = () => {
                     xs={2}
                     md={2}
                     sx={{
-                      textAlign: "center", // Center horizontally
+                      textAlign: "center",
                       display: "flex",
-                      alignItems: "center", // Center vertically
-                      justifyContent: "center", // Center horizontally
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     <Button
@@ -289,10 +281,10 @@ const ShoppingCart = () => {
                     padding: "10px",
                     width: "100%",
                     "&:hover": {
-                      backgroundColor: "#654321", // Change color on hover
+                      backgroundColor: "#654321",
                     },
                     "&:active": {
-                      backgroundColor: "#654321", // Change color on press
+                      backgroundColor: "#654321",
                     },
                   }}
                 >

@@ -80,10 +80,10 @@ const DesktopCartNavbar: React.FC<Props> = ({ backgroundColor }) => {
                 backgroundColor: "#5b9822",
                 color: "white",
                 "&:hover": {
-                  backgroundColor: "#654321", // Change color on hover
+                  backgroundColor: "#654321",
                 },
                 "&:active": {
-                  backgroundColor: "#654321", // Change color on press
+                  backgroundColor: "#654321",
                 },
               }}
             >

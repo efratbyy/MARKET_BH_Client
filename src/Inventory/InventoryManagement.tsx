@@ -185,160 +185,165 @@ const InventoryManagement = () => {
     user.isAdmin && (
       <>
         <Navbar showSearchBar={false} />
-        <Grid sx={{ display: { xs: "none", md: "block" } }}>
-          {/* seach bar */}
-          <SearchBar />
-        </Grid>
-        <Grid sx={{ display: { xs: "none", md: "block" } }}>
-          <TableContainer component={Paper}>
-            <Table stickyHeader sx={{ textAlign: "right" }}>
-              <TableHead>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    שם המוצר
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    ספק
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    מחיר
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    מלאי
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    ברקוד
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    ערוך מוצר
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      fontSize: "20px",
-                      backgroundColor: "olivedrab",
-                      fontFamily: "Fredoka",
-                    }}
-                    align="right"
-                  >
-                    מחק מוצר
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {products?.map((product, rowIndex) => (
-                  <TableRow
-                    key={product.barcode}
-                    sx={{ backgroundColor: getRowColor(rowIndex) }}
-                  >
-                    <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
-                      {product.title}
+
+        <Grid sx={{ minHeight: "90vh" }}>
+          <Grid sx={{ display: { xs: "none", md: "block" } }}>
+            {/* seach bar */}
+            <SearchBar />
+          </Grid>
+          <Grid sx={{ display: { xs: "none", md: "block" } }}>
+            <TableContainer component={Paper}>
+              <Table stickyHeader sx={{ textAlign: "right" }}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      שם המוצר
                     </TableCell>
-                    <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
-                      {product.brand}
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      ספק
                     </TableCell>
-                    <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
-                      {/* price input */}
-                      <TextField
-                        type="number" // Assuming 'inventory' is a numeric value
-                        value={editedPrice[product.barcode] || product.price}
-                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                          handlePriceChange(event, product.barcode)
-                        }
-                      />
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      מחיר
                     </TableCell>
-                    <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
-                      {/* inventory input */}
-                      <TextField
-                        type="number" // Assuming 'inventory' is a numeric value
-                        value={
-                          editedInventory[product.barcode] || product.inventory
-                        }
-                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                          handleInventoryChange(event, product.barcode)
-                        }
-                      />
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      מלאי
                     </TableCell>
-                    <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
-                      {product.barcode}
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      ברקוד
                     </TableCell>
-                    <TableCell>
-                      <Button
-                        sx={{ color: "green" }}
-                        onClick={() =>
-                          navigate(
-                            `${ROUTES.EDIT_PRODUCT}?barcode=${product.barcode}`,
-                            {
-                              replace: true,
-                            }
-                          )
-                        }
-                      >
-                        <EditTwoToneIcon />
-                      </Button>
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      ערוך מוצר
                     </TableCell>
-                    <TableCell>
-                      <Button
-                        sx={{ color: "red" }}
-                        onClick={() => {
-                          handleClickOpen(product.barcode);
-                        }}
-                      >
-                        <DeleteTwoToneIcon />
-                      </Button>
+                    <TableCell
+                      sx={{
+                        fontSize: "20px",
+                        backgroundColor: "olivedrab",
+                        fontFamily: "Fredoka",
+                      }}
+                      align="right"
+                    >
+                      מחק מוצר
                     </TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                </TableHead>
+                <TableBody>
+                  {products?.map((product, rowIndex) => (
+                    <TableRow
+                      key={product.barcode}
+                      sx={{ backgroundColor: getRowColor(rowIndex) }}
+                    >
+                      <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
+                        {product.title}
+                      </TableCell>
+                      <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
+                        {product.brand}
+                      </TableCell>
+                      <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
+                        {/* price input */}
+                        <TextField
+                          type="number" // Assuming 'inventory' is a numeric value
+                          value={editedPrice[product.barcode] || product.price}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            handlePriceChange(event, product.barcode)
+                          }
+                        />
+                      </TableCell>
+                      <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
+                        {/* inventory input */}
+                        <TextField
+                          type="number" // Assuming 'inventory' is a numeric value
+                          value={
+                            editedInventory[product.barcode] ||
+                            product.inventory
+                          }
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            handleInventoryChange(event, product.barcode)
+                          }
+                        />
+                      </TableCell>
+                      <TableCell align="right" sx={{ fontFamily: "Fredoka" }}>
+                        {product.barcode}
+                      </TableCell>
+                      <TableCell>
+                        <Button
+                          sx={{ color: "green" }}
+                          onClick={() =>
+                            navigate(
+                              `${ROUTES.EDIT_PRODUCT}?barcode=${product.barcode}`,
+                              {
+                                replace: true,
+                              }
+                            )
+                          }
+                        >
+                          <EditTwoToneIcon />
+                        </Button>
+                      </TableCell>
+                      <TableCell>
+                        <Button
+                          sx={{ color: "red" }}
+                          onClick={() => {
+                            handleClickOpen(product.barcode);
+                          }}
+                        >
+                          <DeleteTwoToneIcon />
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
         </Grid>
+
         <Grid
           container
           sx={{
             display: { md: "none" },
-            height: "100vh", // Set the height to 100% of the viewport height
+            height: "100vh",
             backgroundImage:
               'url("/assets/images/accessibility_statement.png")',
             backgroundPosition: "center",
@@ -347,13 +352,19 @@ const InventoryManagement = () => {
           }}
         >
           <Grid
+            container
             item
-            xs={12}
+            justifyContent="center" // Center horizontally
+            alignItems="center" // Center vertically
             sx={{
+              display: { xs: "flex", lg: "none" },
               textAlign: "center",
               fontSize: "50px",
-              margin: "25%",
+              height: "100vh",
               zIndex: 5,
+              position: "fixed",
+              width: "100%",
+              top: 0,
             }}
           >
             דף זה אינו נתמך במובייל!

@@ -17,44 +17,6 @@ const InfoIcon: React.FC<Props> = ({ text }) => {
   const id = open ? "simple-popper" : undefined;
 
   return (
-    // <Grid
-    //   sx={{
-    //     position: "relative",
-    //     display: "inline-block",
-    //   }}
-    // >
-    //   <Grid
-    //     sx={{
-    //       display: "inline-block",
-    //       cursor: "pointer",
-    //       fontSize: "14px",
-    //       color: "#007bff",
-    //     }}
-    //     onClick={() => setShowText(!showText)}
-    //   >
-    //     i
-    //   </Grid>
-    //   {showText && (
-    //     <Grid
-    //       sx={{
-    //         position: "absolute",
-    //         top: "100%",
-    //         left: "50%",
-    //         transform: "translateX(-50%)",
-    //         backgroundColor: "#fff",
-    //         padding: "8px",
-    //         border: "1px solid #ccc",
-    //         borderRadius: "4px",
-    //         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    //         display: "none",
-    //         fontSize: "12px",
-    //         maxWidth: "200px",
-    //       }}
-    //     >
-    //       {text}
-    //     </Grid>
-    //   )}
-    // </Grid>
     <>
       <Grid onMouseEnter={handleClick} onMouseLeave={handleClick}>
         <InfoIconMUI />

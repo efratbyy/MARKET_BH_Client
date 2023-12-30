@@ -130,7 +130,7 @@ const ShoppingCartMobilePage = () => {
           backgroundImage: 'url("./assets/images/vegetables.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "200px", // Adjust the height as needed
+          minHeight: "200px",
           position: "relative",
         }}
       >
@@ -241,10 +241,10 @@ const ShoppingCartMobilePage = () => {
                   xs={2}
                   md={2}
                   sx={{
-                    textAlign: "center", // Center horizontally
+                    textAlign: "center",
                     display: "flex",
-                    alignItems: "center", // Center vertically
-                    justifyContent: "center", // Center horizontally
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   <div>
@@ -274,11 +274,6 @@ const ShoppingCartMobilePage = () => {
                         border: "1px solid rgba(0,0,0,0.3)",
                         borderRadius: "2px",
                       }}
-                      // onKeyDown={(e) => {
-                      //   if (e.key === " ") {
-                      //     e.preventDefault(); // Prevent the default behavior of the space key
-                      //   }
-                      // }}
                     ></Input>
                   </div>
                 </Grid>

@@ -14,11 +14,6 @@ import PolicyIcon from "@mui/icons-material/Policy";
 
 const DesktopFooter = () => {
   const navigate = useNavigate();
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsClicked(!isClicked);
-  // };
 
   return (
     <>

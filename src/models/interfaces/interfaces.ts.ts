@@ -16,7 +16,6 @@ export interface ProductInterface {
   title: string;
   brand: string;
   barcode: string;
-  // amount: number;
   price: number;
   image: {
     url: string;

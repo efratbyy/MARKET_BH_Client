@@ -77,7 +77,6 @@ const ProductCard: React.FC<Props> = ({ product, setBarcodeAndOpenDialog }) => {
     <>
       <Card
         sx={{
-          // minWidth: "280",
           display: "flax",
           flexDirection: "column",
           minHeight: "100%",
@@ -211,8 +210,7 @@ const ProductCard: React.FC<Props> = ({ product, setBarcodeAndOpenDialog }) => {
                 orientation="horizontal"
                 variant="contained"
                 sx={{
-                  width: "90%", // Set the desired width to make it smaller
-                  // height: "5.5vh",
+                  width: "90%",
                   boxShadow: "none !important",
                 }}
               >
@@ -227,10 +225,10 @@ const ProductCard: React.FC<Props> = ({ product, setBarcodeAndOpenDialog }) => {
                     width: "40%",
                     backgroundColor: "#5b9822",
                     "&:hover": {
-                      backgroundColor: "#333", // Change color on hover
+                      backgroundColor: "#333",
                     },
                     "&:active": {
-                      backgroundColor: "#333", // Change color on press
+                      backgroundColor: "#333",
                     },
                   }}
                 >
@@ -252,10 +250,10 @@ const ProductCard: React.FC<Props> = ({ product, setBarcodeAndOpenDialog }) => {
                     width: "40%",
                     backgroundColor: "#5b9822",
                     "&:hover": {
-                      backgroundColor: "#333", // Change color on hover
+                      backgroundColor: "#333",
                     },
                     "&:active": {
-                      backgroundColor: "#333", // Change color on press
+                      backgroundColor: "#333",
                     },
                   }}
                 >

@@ -1,6 +1,5 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-// import PageHeader from "../components/PageHeader";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
 
@@ -9,7 +8,6 @@ const ErrorPage = () => {
 
   return (
     <Container>
-      {/* <PageHeader title="Error 404" subtitle="Page not found" /> */}
       <Grid container spacing={2}>
         <Grid item xs={12} md={8}>
           <Typography variant="h5">

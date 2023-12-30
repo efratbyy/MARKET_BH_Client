@@ -27,15 +27,13 @@ const OrderConfirmation: React.FC = () => {
         sx={{
           backgroundImage: 'url("assets/images/orderConfirmation.png")',
           backgroundSize: "cover",
-          //backgroundRepeat: "no-repeat",
-          // backgroundPosition: "center",
-          minHeight: "100vh", // Adjust this based on your layout
+          minHeight: "100vh",
           backgroundColor: "rgba(255, 255, 255, 0.7)", // 0.7 is the alpha (transparency) value
           alignContent: "center",
           alignItems: "center",
           color: "white",
           fontSize: "40px",
-          justifyContent: "center", // Center horizontally
+          justifyContent: "center",
         }}
       >
         <Grid item xs={12} sx={{ marginBottom: "20px", marginRight: "80px" }}>

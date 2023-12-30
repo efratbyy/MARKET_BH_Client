@@ -13,16 +13,12 @@ const useCart = () => {
 
   const handleGetCart = useCallback(async (userId: string) => {
     try {
-      //setLoading(true);
       if (userId) {
         const cart = await getCartApi(userId);
-        //requestStatus(false, null, cart);
         return Promise.resolve(cart);
       }
       return undefined;
-    } catch (error) {
-      //if (typeof error === "string") requestStatus(false, error, null);
-    }
+    } catch (error) {}
   }, []);
 
   const updateCart = useCallback(

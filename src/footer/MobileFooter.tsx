@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
@@ -6,19 +6,13 @@ import InfoTwoToneIcon from "@mui/icons-material/InfoTwoTone";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Avatar, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import FormatListBulletedTwoToneIcon from "@mui/icons-material/FormatListBulletedTwoTone";
 import CategoriesBottomNavBar from "./CategoriesBottomNavBar";
 
 const MobileFooter = () => {
   const navigate = useNavigate();
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const handleClick = () => {
-  //   setIsClicked(!isClicked);
-  // };
 
   return (
     <>
@@ -53,26 +47,6 @@ const MobileFooter = () => {
               label="אודות"
               icon={<InfoTwoToneIcon />}
             />
-
-            {/* <BottomNavigationAction
-              // onClick={() => navigate(ROUTES.ROOT)}
-              onClick={handleClick}
-              label="מוצרים"
-              icon={
-                <Avatar
-                  sx={{
-                    border: "1px solid #555",
-                    color: isClicked ? "white" : "#555",
-                    bgcolor: isClicked ? "#5b9822" : "white",
-                    marginTop: "-30px",
-                    height: "90%",
-                    width: "36%",
-                  }}
-                >
-                  <FormatListBulletedTwoToneIcon />
-                </Avatar>
-              }
-            /> */}
 
             <CategoriesBottomNavBar />
 

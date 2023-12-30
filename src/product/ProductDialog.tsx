@@ -37,18 +37,7 @@ const ProductDialog: FC<Props> = ({
   handleAddToCart,
 }) => {
   const { user } = useUser();
-  const {
-    title,
-    barcode,
-    brand,
-    image,
-    price,
-    details,
-    inventory,
-    // ingredients,
-    // content,
-    // manufacturingCountry,
-  } = product;
+  const { title, barcode, brand, image, price, details, inventory } = product;
 
   return (
     <Dialog
