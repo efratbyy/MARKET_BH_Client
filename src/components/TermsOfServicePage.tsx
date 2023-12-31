@@ -2,32 +2,12 @@ import React from "react";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { Typography, Link, Grid } from "@mui/material";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const TermsOfServicePage = () => {
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage: "url(/assets/images/terms_of_service.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.7,
-        }}
-      ></Grid>
-
-      <Navbar showSearchBar={false} />
-
-      <Grid
-        sx={{
-          maxWidth: "800px",
-          margin: "auto",
-          padding: 3,
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/terms_of_service.png">
         <Typography
           style={{
             fontSize: "20px",
@@ -775,8 +755,7 @@ const TermsOfServicePage = () => {
           <span style={{ fontSize: "17px" }}>1.5</span> כל טענה ו/או תביעה כנגד
           הקמעונאי תוגש לא יאוחר משנה אחת מהמקרה שבגינו עלתה הטענה.
         </Typography>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

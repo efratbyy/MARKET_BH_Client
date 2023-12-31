@@ -26,12 +26,11 @@ import {
 } from "../apiService/userApiService";
 import { useLocation, useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useUser } from "../providers/UserProvider";
 import { getUserFromLocalStorage } from "../services/LocalStorageService";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const EditUserForm = () => {
   const navigate = useNavigate();
@@ -170,23 +169,7 @@ const EditUserForm = () => {
   return (
     user && (
       <>
-        <Navbar showSearchBar={false} />
-        <Grid
-          sx={{
-            backgroundImage: "url(/assets/images/edit_user.png)",
-            position: "relative !important",
-            backgroundColor: "#fff",
-            zIndex: 1,
-            padding: "16px !important",
-
-            overflowY: "scroll",
-            height: "100vh",
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <BackgroundImageLayout backgroundImage="/assets/images/edit_user.png">
           <Container maxWidth="sm">
             <Typography
               variant="h4"
@@ -441,8 +424,7 @@ const EditUserForm = () => {
               </Button>
             </form>
           </Container>
-        </Grid>
-        <Footer />
+        </BackgroundImageLayout>
       </>
     )
   );

@@ -13,9 +13,7 @@ import {
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import { useUser } from "../providers/UserProvider";
 import { addProductApi } from "../apiService/productApiService";
 import productSchema from "../models/joiValidation/productJoiValidation";
@@ -23,6 +21,7 @@ import productSchema from "../models/joiValidation/productJoiValidation";
 import { ProductClientType } from "../types/productTypes.js";
 import convertToDbType from "../helpers/convertToDbType";
 import InfoIcon from "./InfoIcon";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const AddProductForm: React.FC = () => {
   const snack = useSnack();
@@ -126,24 +125,7 @@ const AddProductForm: React.FC = () => {
     user &&
     user.isAdmin && (
       <>
-        <Navbar showSearchBar={false} />
-
-        <Grid
-          sx={{
-            position: "relative !important",
-            backgroundColor: "#fff",
-            zIndex: 1,
-            padding: "16px !important",
-
-            overflowY: "scroll",
-            height: "100vh",
-            backgroundAttachment: "fixed",
-            backgroundImage: "url(/assets/images/register.png)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <BackgroundImageLayout backgroundImage="/assets/images/register.png">
           <Container maxWidth="sm">
             <Typography
               variant="h4"
@@ -609,8 +591,7 @@ const AddProductForm: React.FC = () => {
               </Button>
             </form>
           </Container>
-        </Grid>
-        <Footer />
+        </BackgroundImageLayout>
       </>
     )
   );

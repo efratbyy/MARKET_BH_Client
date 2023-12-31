@@ -1,38 +1,11 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const AboutPage = () => {
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage:
-            'url("https://cdn.pixabay.com/photo/2022/12/30/12/39/flowers-7686890_1280.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.7,
-        }}
-      ></Grid>
-      <Navbar showSearchBar={false} showDataFilter={false} />
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        justifyContent="center"
-        sx={{
-          position: "relative",
-          minHeight: "70vh",
-          width: "100%",
-          height: "30%",
-          padding: "20px",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/aboutpagebackgroundimage.png">
         <Typography
           variant="h1"
           sx={{
@@ -232,8 +205,7 @@ const AboutPage = () => {
         <Typography variant="h5" sx={{ marginBottom: 2 }}>
           נשמח לשמוע מכם ולסייע בכל שאלה או בקשה. תודה רבה על ביקורכם!
         </Typography>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

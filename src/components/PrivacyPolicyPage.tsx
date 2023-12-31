@@ -1,33 +1,11 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
-import { Grid, Link, Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const PrivacyPolicyPage = () => {
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage: 'url("/assets/images/privacy_policy.png")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.5,
-        }}
-      ></Grid>
-
-      <Navbar showSearchBar={false} />
-
-      <Grid
-        sx={{
-          maxWidth: "800px",
-          margin: "auto",
-          padding: 3,
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/privacy_policy.png">
         <Typography
           component="div"
           style={{
@@ -220,6 +198,8 @@ const PrivacyPolicyPage = () => {
           >
             http://www.google.com/analytics/terms/us.html
           </Link>
+        </Typography>
+        <Typography variant="body1" sx={{ fontSize: "11pt" }}>
           <Link
             href="http://www.google.com/policies/privacy"
             style={{
@@ -229,6 +209,8 @@ const PrivacyPolicyPage = () => {
           >
             http://www.google.com/policies/privacy
           </Link>
+        </Typography>
+        <Typography variant="body1" sx={{ fontSize: "11pt" }}>
           . 3.4 הקמעונאי אינו נושא בכל אחריות בגין שימוש במידע אודותיך המתקבל
           שלא באמצעותו אלא על-ידי צדדים שלישיים לרבות חברות ו/או מותגים של
           מוצרים אשר משתמשים או מופיעים באתר, ואשר אינם בשליטתו של הקמעונאי.
@@ -358,8 +340,7 @@ const PrivacyPolicyPage = () => {
             <span> shaiby34@gmail.com </span>
           </Link>
         </Typography>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

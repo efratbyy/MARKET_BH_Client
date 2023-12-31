@@ -5,6 +5,7 @@ import Router from "./routes/Router";
 import { SnackbarProvider } from "./providers/SnackbarProvider";
 import UserProvider from "./providers/UserProvider";
 import CartProvider from "./providers/CartProvider";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <SnackbarProvider>
           <UserProvider>
             <CartProvider>
-              <Router />
+              <Layout>
+                <Router />
+              </Layout>
             </CartProvider>
           </UserProvider>
         </SnackbarProvider>

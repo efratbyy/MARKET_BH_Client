@@ -10,7 +10,6 @@ import {
   Button,
   Container,
   Typography,
-  Grid,
   InputAdornment,
   IconButton,
 } from "@mui/material";
@@ -21,15 +20,14 @@ import { UserInterface } from "../models/interfaces/interfaces.ts";
 import { registrationApi } from "../apiService/userApiService";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import {
   getUserFromLocalStorage,
   saveUserToken,
 } from "../services/LocalStorageService";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useUser } from "../providers/UserProvider";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const RegistrationForm: React.FC = () => {
   const snack = useSnack();
@@ -126,22 +124,7 @@ const RegistrationForm: React.FC = () => {
 
   return (
     <>
-      <Navbar showSearchBar={false} />
-      <Grid
-        sx={{
-          position: "relative !important",
-          backgroundColor: "#fff",
-          zIndex: 1,
-          padding: "16px !important",
-          overflowY: "scroll",
-          height: "100vh",
-          backgroundAttachment: "fixed",
-          backgroundImage: "url(/assets/images/register.png)",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/register.png">
         <Container maxWidth="sm">
           <Typography
             variant="h4"
@@ -337,8 +320,7 @@ const RegistrationForm: React.FC = () => {
             </Button>
           </form>
         </Container>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

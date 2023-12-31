@@ -15,13 +15,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Navigate, useNavigate } from "react-router-dom";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
 import { useSnack } from "../providers/SnackbarProvider";
 import loginSchema from "../models/joiValidation/loginSchema";
 import Joi from "joi";
 import { useUser } from "../providers/UserProvider";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
@@ -76,142 +75,134 @@ const Login = () => {
 
   return (
     <>
-      <Navbar showSearchBar={false} />
-      <Grid
-        sx={{
-          minHeight: "100vh",
-          backgroundImage: "url(/assets/images/login_page_image.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-        }}
-      ></Grid>
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        justifyContent="center"
-        sx={{
-          position: "relative",
-          minHeight: "90vh",
-          paddingRight: "15%",
-          width: "100%",
-          height: "30%",
-        }}
-      >
-        <Grid item>
-          <Typography
-            variant="h4"
-            component="div"
-            sx={{ color: "darkslategrey" }}
-          >
-            התחבר
-          </Typography>
-        </Grid>
-        <Grid item>
-          <TextField
-            label="מייל"
-            variant="outlined"
-            color="success"
-            value={useremail}
-            onChange={(e) => setUseremail(e.target.value)}
-            error={Boolean(errors.email)}
-            helperText={errors.email}
-            sx={{
-              backgroundColor: "#999966",
-              width: "300px",
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 1)",
-                },
-              },
-            }}
-          />
-        </Grid>
-        <Grid item>
-          <TextField
-            type={showPassword ? "text" : "password"}
-            variant="outlined"
-            name="password"
-            label="סיסמא"
-            color="success"
-            fullWidth
-            margin="normal"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            error={Boolean(errors.password)}
-            helperText={errors.password}
-            sx={{
-              backgroundColor: "#999966",
-              width: "300px",
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 1)",
-                },
-              },
-            }}
-            InputProps={{
-              dir: "ltr",
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    onClick={handleTogglePasswordVisibility}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </Grid>
-
-        <Grid item xs={12}>
-          <Button
-            variant="text"
-            onClick={() => navigate(ROUTES.FORGOT_PASSWORD)}
-          >
+      <BackgroundImageLayout backgroundImage="/assets/images/login_page_image.png">
+        <Grid
+          sx={{
+            alignItems: "right",
+            justifyContent: "center",
+            display: "flex",
+            flexDirection: "column",
+            position: "relative !important",
+            zIndex: 1,
+            overflowY: "scroll",
+            height: "100vh",
+            "@media (min-width: 899px)": {
+              paddingRight: "50px",
+              marginTop: "100px !important",
+            },
+          }}
+        >
+          <Grid item>
             <Typography
-              sx={{
-                color: "cornsilk",
-                textDecoration: "underline",
-                fontSize: 17,
-              }}
-              variant="body2"
+              variant="h4"
+              component="div"
+              sx={{ color: "darkslategrey" }}
             >
-              שכחתי סיסמה?
+              התחבר
             </Typography>
-          </Button>
-        </Grid>
-
-        <Grid item>
-          <Button
-            variant="contained"
-            sx={{ backgroundColor: "#5b9822" }}
-            onClick={handleLogin}
-          >
-            התחבר
-          </Button>
-        </Grid>
-
-        <Grid item xs={12}>
-          <Button variant="text" onClick={() => navigate(ROUTES.REGISTER)}>
-            <Typography
+          </Grid>
+          <Grid item>
+            <TextField
+              label="מייל"
+              variant="outlined"
+              color="success"
+              value={useremail}
+              onChange={(e) => setUseremail(e.target.value)}
+              error={Boolean(errors.email)}
+              helperText={errors.email}
               sx={{
-                color: "cornsilk",
-                textDecoration: "underline",
-                fontSize: 17,
+                backgroundColor: "#999966",
+                width: "300px",
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "rgba(255, 255, 255, 1)",
+                  },
+                },
               }}
-              variant="body2"
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              type={showPassword ? "text" : "password"}
+              variant="outlined"
+              name="password"
+              label="סיסמא"
+              color="success"
+              fullWidth
+              margin="normal"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              error={Boolean(errors.password)}
+              helperText={errors.password}
+              sx={{
+                backgroundColor: "#999966",
+                width: "300px",
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "rgba(255, 255, 255, 1)",
+                  },
+                },
+              }}
+              InputProps={{
+                dir: "ltr",
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleTogglePasswordVisibility}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
+          <Grid item>
+            <Button
+              variant="text"
+              onClick={() => navigate(ROUTES.FORGOT_PASSWORD)}
             >
-              אין לך חשבון? הרשם{" "}
-            </Typography>
-          </Button>
+              <Typography
+                sx={{
+                  color: "cornsilk",
+                  textDecoration: "underline",
+                  fontSize: 17,
+                }}
+                variant="body2"
+              >
+                שכחתי סיסמה?
+              </Typography>
+            </Button>
+          </Grid>
+
+          <Grid item>
+            <Button
+              variant="contained"
+              sx={{ backgroundColor: "#5b9822" }}
+              onClick={handleLogin}
+            >
+              התחבר
+            </Button>
+          </Grid>
+
+          <Grid item>
+            <Button variant="text" onClick={() => navigate(ROUTES.REGISTER)}>
+              <Typography
+                sx={{
+                  color: "cornsilk",
+                  textDecoration: "underline",
+                  fontSize: 17,
+                }}
+                variant="body2"
+              >
+                אין לך חשבון? הרשם{" "}
+              </Typography>
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

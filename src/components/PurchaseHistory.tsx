@@ -9,6 +9,7 @@ import { Grid, Typography } from "@mui/material";
 import Navbar from "../navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const PurchaseHistory = () => {
   const { user } = useUser();
@@ -99,76 +100,62 @@ const PurchaseHistory = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage:
-            'url( "https://cdn.pixabay.com/photo/2015/06/15/20/21/register-810546_1280.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.7,
-        }}
-      ></Grid>
-      <Navbar showSearchBar={false} showDataFilter={false} />
-      <Typography
-        variant="h1"
-        sx={{
-          fontSize: "50px",
-          fontWeight: "bold",
-          marginBottom: 2,
-          color: "primary.main",
-          textAlign: "center",
-          paddingTop: "35%",
-        }}
-      >
-        הסטוריית הזמנות
-      </Typography>
-      <Grid
-        container
-        item
-        xs={10}
-        lg={6}
-        sx={{ marginRight: "auto", marginLeft: "auto" }}
-      >
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          onRowClick={(params) => {
-            navigate(
-              `${ROUTES.PURCHASE_HISTORY_DETAILS}?order_number=${params.row["col4"]}`
-            );
-          }}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 10,
-              },
-            },
-          }}
+      <BackgroundImageLayout backgroundImage="purchaseHistorybackground.png">
+        <Typography
+          variant="h1"
           sx={{
-            height: "85vh",
-            boxShadow: 2,
-            border: 5,
-            borderColor: "grey",
-            "& .MuiDataGrid-cell:hover": {
-              color: "white",
-            },
-            marginBottom: "30px",
-            "& .MuiTablePagination-root": {
-              fontSize: "16px",
-              color: "white",
-            },
-            marginRight: "auto",
-            marginLeft: "auto",
+            fontSize: "50px",
+            fontWeight: "bold",
+            marginBottom: 2,
+            color: "primary.main",
+            textAlign: "center",
           }}
-          pagination
-          pageSizeOptions={[5, 10, 25]}
-        />
-      </Grid>
-      <Footer />
+        >
+          הסטוריית הזמנות
+        </Typography>
+        <Grid
+          container
+          item
+          xs={10}
+          lg={6}
+          sx={{ marginRight: "auto", marginLeft: "auto" }}
+        >
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            onRowClick={(params) => {
+              navigate(
+                `${ROUTES.PURCHASE_HISTORY_DETAILS}?order_number=${params.row["col4"]}`
+              );
+            }}
+            initialState={{
+              pagination: {
+                paginationModel: {
+                  pageSize: 10,
+                },
+              },
+            }}
+            sx={{
+              height: "85vh",
+              boxShadow: 2,
+              border: 5,
+              borderColor: "grey",
+              "& .MuiDataGrid-cell:hover": {
+                color: "white",
+              },
+              marginBottom: "30px",
+              "& .MuiTablePagination-root": {
+                fontSize: "16px",
+                color: "white",
+              },
+              marginRight: "auto",
+              marginLeft: "auto",
+            }}
+            pagination
+            pageSizeOptions={[5, 10, 25]}
+          />
+        </Grid>
+      </BackgroundImageLayout>
     </>
   );
 };

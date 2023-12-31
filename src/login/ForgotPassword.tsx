@@ -4,10 +4,9 @@ import Joi from "joi";
 import { createResetPasswordKeyApi } from "../apiService/userApiService";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import { emailResetPasswordApi } from "../apiService/emailApiService";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -82,28 +81,19 @@ const ForgotPassword = () => {
 
   return (
     <>
-      <Navbar showSearchBar={false} />
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative !important",
-          backgroundColor: "#fff",
-          zIndex: 1,
-          padding: "16px !important",
-          overflowY: "scroll",
-          height: "100vh",
-          backgroundAttachment: "fixed",
-          backgroundImage: "url(/assets/images/register.png)",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Grid item>
+      <BackgroundImageLayout backgroundImage="/assets/images/register.png">
+        <Grid
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            position: "relative !important",
+            zIndex: 1,
+            padding: "16px !important",
+            overflowY: "scroll",
+            height: "100vh",
+          }}
+        >
           <Typography
             variant="h4"
             align="center"
@@ -112,57 +102,56 @@ const ForgotPassword = () => {
           >
             איפוס סיסמה
           </Typography>
-        </Grid>
 
-        <form onSubmit={handleSubmit}>
-          <Grid item>
-            <TextField
-              type="email"
-              name="email"
-              label="מייל"
-              color="success"
-              margin="normal"
-              value={userEmail}
-              onChange={handleChangeEmail}
-              error={Boolean(userEmailError)}
-              helperText={userEmailError}
-              sx={{
-                justifyItems: "center",
-                justifyContent: "center",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "rgba(0, 0, 0, 1)",
+          <form onSubmit={handleSubmit}>
+            <Grid item>
+              <TextField
+                type="email"
+                name="email"
+                label="מייל"
+                color="success"
+                margin="normal"
+                value={userEmail}
+                onChange={handleChangeEmail}
+                error={Boolean(userEmailError)}
+                helperText={userEmailError}
+                sx={{
+                  justifyItems: "center",
+                  justifyContent: "center",
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
                   },
-                },
-              }}
-            />
-          </Grid>
+                }}
+              />
+            </Grid>
 
-          <Grid item>
-            <Button
-              type="submit"
-              variant="contained"
-              color="success"
-              disabled={userEmailError !== "" || userEmail === ""}
-              sx={{ margin: "10px" }}
-            >
-              שלח מייל
-            </Button>
+            <Grid item>
+              <Button
+                type="submit"
+                variant="contained"
+                color="success"
+                disabled={userEmailError !== "" || userEmail === ""}
+                sx={{ margin: "10px" }}
+              >
+                שלח מייל
+              </Button>
 
-            <Button
-              variant="contained"
-              color="error"
-              sx={{ margin: "10px" }}
-              onClick={() => {
-                navigate(ROUTES.ROOT);
-              }}
-            >
-              ביטול
-            </Button>
-          </Grid>
-        </form>
-      </Grid>
-      <Footer />
+              <Button
+                variant="contained"
+                color="error"
+                sx={{ margin: "10px" }}
+                onClick={() => {
+                  navigate(ROUTES.ROOT);
+                }}
+              >
+                ביטול
+              </Button>
+            </Grid>
+          </form>
+        </Grid>
+      </BackgroundImageLayout>
     </>
   );
 };

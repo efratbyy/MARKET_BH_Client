@@ -10,9 +10,7 @@ import Joi from "joi";
 import { CreditCardInterface } from "../models/interfaces/interfaces.ts";
 import { Navigate, useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import creditCardSchema from "../models/joiValidation/CreditCardSchema";
 import CreditCardInput from "react-credit-card-input";
 import { emailPaymentDetailsApi } from "../apiService/emailApiService";
@@ -20,6 +18,7 @@ import { useUser } from "../providers/UserProvider";
 import { useCartProvider } from "../providers/CartProvider";
 import CheckoutPageBreadCrumb from "./CheckoutPageBreadCrumb";
 import { getUserByIdApi } from "../apiService/userApiService";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const CheckoutPage: React.FC = () => {
   const snack = useSnack();
@@ -178,32 +177,7 @@ const CheckoutPage: React.FC = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage: "url(/assets/images/creditCard.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.3,
-        }}
-      ></Grid>
-      <Navbar showSearchBar={false} showDataFilter={false} />
-
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        justifyContent="center"
-        sx={{
-          position: "relative",
-          minHeight: "70vh",
-          width: "100%",
-          height: "30%",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/creditCard.png">
         <CheckoutPageBreadCrumb />
 
         <Grid item xs={12}>
@@ -335,9 +309,7 @@ const CheckoutPage: React.FC = () => {
         >
           סה״כ לתשלום: {totalPriceInCart.toFixed(2)}₪
         </Grid>
-      </Grid>
-
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

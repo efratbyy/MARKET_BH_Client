@@ -17,9 +17,7 @@ import {
 import Joi from "joi";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import { useUser } from "../providers/UserProvider";
 import {
   editProductApi,
@@ -29,6 +27,7 @@ import productSchema from "../models/joiValidation/productJoiValidation";
 import { ProductClientType } from "../types/productTypes.js";
 import convertToDbType from "../helpers/convertToDbType";
 import convertToClientType from "../helpers/convertToClientType";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const EditProductForm = () => {
   const navigate = useNavigate();
@@ -148,22 +147,7 @@ const EditProductForm = () => {
     user &&
     user.isAdmin && (
       <>
-        <Navbar showSearchBar={false} />
-        <Grid
-          sx={{
-            position: "relative !important",
-            backgroundColor: "#fff",
-            zIndex: 1,
-            padding: "16px !important",
-            overflowY: "scroll",
-            height: "100vh",
-            backgroundAttachment: "fixed",
-            backgroundImage: "url(/assets/images/register.png)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <BackgroundImageLayout backgroundImage="/assets/images/register.png">
           <Container maxWidth="sm">
             <Typography
               variant="h4"
@@ -171,7 +155,7 @@ const EditProductForm = () => {
               gutterBottom
               sx={{ color: "white" }}
             >
-              יצירת מוצר חדש
+              עריכת מוצר
             </Typography>
             <form onSubmit={handleSubmit}>
               <TextField
@@ -608,8 +592,7 @@ const EditProductForm = () => {
               </Button>
             </form>
           </Container>
-        </Grid>
-        <Footer />
+        </BackgroundImageLayout>
       </>
     )
   );

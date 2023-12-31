@@ -16,16 +16,14 @@ import {
 import Joi from "joi";
 import { useNavigate, useParams } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
-import Navbar from "../navbar/Navbar";
 import { useSnack } from "../providers/SnackbarProvider";
-import Footer from "../footer/Footer";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { log } from "console";
 import {
   getUserByForgotPasswordKeyApi,
   updatePasswordApi,
 } from "../apiService/userApiService";
 import { UserInterface } from "../models/interfaces/interfaces.ts";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const CreateNewPassword = () => {
   const [password, setPassword] = useState("");
@@ -120,170 +118,161 @@ const CreateNewPassword = () => {
   return (
     userFromToken && (
       <>
-        <Navbar showSearchBar={false} />
-        <Grid
-          container
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative !important",
-            backgroundColor: "#fff",
-            zIndex: 1,
-            padding: "16px !important",
-            overflowY: "scroll",
-            height: "100vh",
-            backgroundAttachment: "fixed",
-            backgroundImage: "url(/assets/images/register.png)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <BackgroundImageLayout backgroundImage="/assets/images/register.png">
           <Grid
-            item
-            sx={{ textAlign: "right", alignItems: "right !important" }}
+            container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative !important",
+              zIndex: 1,
+            }}
           >
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{
-                color: "black",
-                textAlign: "right",
-                alignItems: "right !important",
-              }}
+            <Grid
+              item
+              sx={{ textAlign: "right", alignItems: "right !important" }}
             >
-              היי {userFromToken?.first + " " + userFromToken?.last},
-            </Typography>
-          </Grid>
-
-          <Grid item>
-            <Typography
-              variant="h4"
-              align="center"
-              gutterBottom
-              sx={{ color: "black" }}
-            >
-              אנא הזן סיסמה חדשה
-            </Typography>
-          </Grid>
-
-          <form onSubmit={handleSubmit}>
-            <Grid item>
-              <TextField
-                type={showPassword ? "text" : "password"}
-                variant="outlined"
-                name="password"
-                label="סיסמא"
-                color="success"
-                fullWidth
-                margin="normal"
-                value={password}
-                onChange={handleChangePassword}
-                error={Boolean(passwordError)}
-                helperText={passwordError}
+              <Typography
+                variant="h4"
+                gutterBottom
                 sx={{
-                  backgroundColor: "#999966",
-                  width: "300px",
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "rgba(255, 255, 255, 1)",
-                    },
-                  },
+                  color: "black",
+                  textAlign: "right",
+                  alignItems: "right !important",
                 }}
-                InputProps={{
-                  dir: "ltr",
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => {
-                          setShowPassword(!showPassword);
-                        }}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
+              >
+                היי {userFromToken?.first + " " + userFromToken?.last},
+              </Typography>
             </Grid>
 
             <Grid item>
-              <TextField
-                type={showVerifyPassword ? "text" : "password"}
-                variant="outlined"
-                name="verifyPassword"
-                label="וידוא סיסמה"
-                color="success"
-                fullWidth
-                margin="normal"
-                value={verifyPassword}
-                onChange={(e) => setVerifyPassword(e.target.value)}
-                sx={{
-                  backgroundColor: "#999966",
-                  width: "300px",
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "rgba(255, 255, 255, 1)",
-                    },
-                  },
-                }}
-                InputProps={{
-                  dir: "ltr",
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => {
-                          setShowVerifyPassword(!showVerifyPassword);
-                        }}
-                        edge="end"
-                      >
-                        {showVerifyPassword ? (
-                          <VisibilityOff />
-                        ) : (
-                          <Visibility />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
+              <Typography
+                variant="h4"
+                align="center"
+                gutterBottom
+                sx={{ color: "black" }}
+              >
+                אנא הזן סיסמה חדשה
+              </Typography>
             </Grid>
 
-            <Grid container justifyContent="center" alignItems="center">
+            <form onSubmit={handleSubmit}>
               <Grid item>
-                <Button
-                  type="submit"
-                  variant="contained"
+                <TextField
+                  type={showPassword ? "text" : "password"}
+                  variant="outlined"
+                  name="password"
+                  label="סיסמא"
                   color="success"
-                  disabled={
-                    passwordError !== "" ||
-                    password === "" ||
-                    verifyPassword === "" ||
-                    password !== verifyPassword
-                  }
-                  sx={{ margin: "10px" }}
-                >
-                  עדכן סיסמה
-                </Button>
-
-                <Button
-                  variant="contained"
-                  color="error"
-                  sx={{ margin: "10px" }}
-                  onClick={() => {
-                    navigate(ROUTES.ROOT);
+                  fullWidth
+                  margin="normal"
+                  value={password}
+                  onChange={handleChangePassword}
+                  error={Boolean(passwordError)}
+                  helperText={passwordError}
+                  sx={{
+                    backgroundColor: "#999966",
+                    width: "300px",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 1)",
+                      },
+                    },
                   }}
-                >
-                  ביטול
-                </Button>
+                  InputProps={{
+                    dir: "ltr",
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => {
+                            setShowPassword(!showPassword);
+                          }}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
               </Grid>
-            </Grid>
-          </form>
-        </Grid>
-        <Footer />
+
+              <Grid item>
+                <TextField
+                  type={showVerifyPassword ? "text" : "password"}
+                  variant="outlined"
+                  name="verifyPassword"
+                  label="וידוא סיסמה"
+                  color="success"
+                  fullWidth
+                  margin="normal"
+                  value={verifyPassword}
+                  onChange={(e) => setVerifyPassword(e.target.value)}
+                  sx={{
+                    backgroundColor: "#999966",
+                    width: "300px",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 1)",
+                      },
+                    },
+                  }}
+                  InputProps={{
+                    dir: "ltr",
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => {
+                            setShowVerifyPassword(!showVerifyPassword);
+                          }}
+                          edge="end"
+                        >
+                          {showVerifyPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+
+              <Grid container justifyContent="center" alignItems="center">
+                <Grid item>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="success"
+                    disabled={
+                      passwordError !== "" ||
+                      password === "" ||
+                      verifyPassword === "" ||
+                      password !== verifyPassword
+                    }
+                    sx={{ margin: "10px" }}
+                  >
+                    עדכן סיסמה
+                  </Button>
+
+                  <Button
+                    variant="contained"
+                    color="error"
+                    sx={{ margin: "10px" }}
+                    onClick={() => {
+                      navigate(ROUTES.ROOT);
+                    }}
+                  >
+                    ביטול
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          </Grid>
+        </BackgroundImageLayout>
       </>
     )
   );

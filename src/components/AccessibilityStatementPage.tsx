@@ -3,32 +3,12 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const AccessibilityStatementPage = () => {
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage: 'url("/assets/images/accessibility_statement.png")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.7,
-        }}
-      ></Grid>
-      <Navbar />
-
-      <Grid
-        sx={{
-          maxWidth: "800px",
-          margin: "auto",
-          padding: 3,
-          fontFamily: "Arial, sans-serif",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/accessibility_statement.png">
         <Typography sx={{ margin: "30px", textAlign: "center" }} variant="h2">
           הצהרת נגישות
         </Typography>
@@ -50,8 +30,7 @@ const AccessibilityStatementPage = () => {
           <br />
           דוא"ל: shaiby34@gmail.com
         </Typography>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

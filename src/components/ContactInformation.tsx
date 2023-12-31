@@ -1,38 +1,11 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
-import { Button, Grid, Link, Typography } from "@mui/material";
+import { Button, Grid, Link } from "@mui/material";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const ContactInformation = () => {
   return (
     <>
-      <Grid
-        sx={{
-          backgroundImage:
-            'url("https://cdn.pixabay.com/photo/2013/11/13/16/00/fruit-210105_1280.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          width: "100%",
-          zIndex: -1,
-          minHeight: "100vh",
-          opacity: 0.5,
-        }}
-      ></Grid>
-      <Navbar showSearchBar={false} showDataFilter={false} />
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        justifyContent="center"
-        sx={{
-          position: "relative",
-          minHeight: "70vh",
-          width: "100%",
-          height: "30%",
-          padding: "20px",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="/assets/images/contactusbackgroundImage.png">
         <Grid
           item
           xs={12}
@@ -124,8 +97,7 @@ const ContactInformation = () => {
             </Button>
           </Grid>
         </Grid>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };

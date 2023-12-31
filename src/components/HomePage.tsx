@@ -1,10 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Navbar from "../navbar/Navbar";
 import Products from "../product/Products";
 import ShoppingCart from "../cart/ShoppingCart";
 import "./HomePage.css";
 import { Button, Grid, Typography } from "@mui/material";
-import Footer from "../footer/Footer";
 import { useUser } from "../providers/UserProvider";
 import CategoryNavbar from "../navbar/CategoryNavbar";
 import DataFilter from "../search_filter/DataFilter";
@@ -45,7 +43,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <CategoryNavbar />
       <Grid
         container
@@ -211,7 +209,7 @@ const HomePage = () => {
           </Grid>
         )}
       </Grid>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

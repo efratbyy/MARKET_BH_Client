@@ -35,6 +35,7 @@ import {
   updateProductPriceApi,
 } from "../apiService/productApiService";
 import GeneralDialog from "../generic components/GeneralDialog";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const InventoryManagement = () => {
   const [products, setProducts] = useState<ProductInterface[] | undefined>(
@@ -184,9 +185,7 @@ const InventoryManagement = () => {
     user &&
     user.isAdmin && (
       <>
-        <Navbar showSearchBar={false} />
-
-        <Grid sx={{ minHeight: "90vh" }}>
+        <Grid sx={{ display: { xs: "none", md: "block" }, minHeight: "90vh" }}>
           <Grid sx={{ display: { xs: "none", md: "block" } }}>
             {/* seach bar */}
             <SearchBar />
@@ -339,25 +338,14 @@ const InventoryManagement = () => {
           </Grid>
         </Grid>
 
-        <Grid
-          container
-          sx={{
-            display: { md: "none" },
-            height: "100vh",
-            backgroundImage:
-              'url("/assets/images/accessibility_statement.png")',
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <BackgroundImageLayout backgroundImage="/assets/images/accessibility_statement.png">
           <Grid
             container
             item
             justifyContent="center" // Center horizontally
             alignItems="center" // Center vertically
             sx={{
-              display: { xs: "flex", lg: "none" },
+              display: { xs: "flex", md: "none" },
               textAlign: "center",
               fontSize: "50px",
               height: "100vh",
@@ -369,7 +357,7 @@ const InventoryManagement = () => {
           >
             דף זה אינו נתמך במובייל!
           </Grid>
-        </Grid>
+        </BackgroundImageLayout>
 
         <GeneralDialog
           title="מחיקת מוצר!"
@@ -382,7 +370,6 @@ const InventoryManagement = () => {
           showCancelButton={true}
           handleClose={handleClose}
         />
-        <Footer />
       </>
     )
   );

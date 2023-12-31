@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import PurchaseHistoryDetailsBreadCrumb from "./PurchesHistoryDetailsBreadCrumb";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const PurchaseHistoryDetails = () => {
   const { user } = useUser();
@@ -92,35 +93,8 @@ const PurchaseHistoryDetails = () => {
 
   return (
     <>
-      <PurchaseHistoryDetailsBreadCrumb orderNumber={orderNumber || ""} />
-      <Grid
-        sx={{
-          opacity: 0.2,
-          backgroundImage: `url("assets/images/order-details.png")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "fixed",
-          minHeight: "100vh",
-          width: "100%",
-          bottom: 0,
-          zIndex: -1,
-          backgroundAttachment: "fixed",
-        }}
-      />
-      <Navbar showSearchBar={false} showDataFilter={false} />
-      <Grid
-        container
-        spacing={3}
-        direction="column"
-        // justifyContent="center"
-        sx={{
-          position: "relative",
-          minHeight: "100vh",
-          paddingTop: "10%",
-          width: "100%",
-          height: "30%",
-        }}
-      >
+      <BackgroundImageLayout backgroundImage="assets/images/order-details.png">
+        <PurchaseHistoryDetailsBreadCrumb orderNumber={orderNumber || ""} />
         <Grid
           item
           xs={12}
@@ -231,8 +205,7 @@ const PurchaseHistoryDetails = () => {
             </Table>
           </TableContainer>
         </Grid>
-      </Grid>
-      <Footer />
+      </BackgroundImageLayout>
     </>
   );
 };
