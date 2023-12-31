@@ -13,7 +13,10 @@ import ROUTES from "../routes/routesModel";
 import { useSnack } from "../providers/SnackbarProvider";
 import creditCardSchema from "../models/joiValidation/CreditCardSchema";
 import CreditCardInput from "react-credit-card-input";
-import { emailPaymentDetailsApi } from "../apiService/emailApiService";
+import {
+  emailPaymentDetailsApi,
+  emailToClientApi,
+} from "../apiService/emailApiService";
 import { useUser } from "../providers/UserProvider";
 import { useCartProvider } from "../providers/CartProvider";
 import CheckoutPageBreadCrumb from "./CheckoutPageBreadCrumb";
@@ -158,8 +161,16 @@ const CheckoutPage: React.FC = () => {
         cart,
         orderNumber
       );
-      console.log(res);
       snack("success", "פרטי האשראי התקבלו בהצלחה!");
+
+      const res2 = await emailToClientApi(
+        formattedDate,
+        user?.first + " " + user?.last || "No User Name",
+        userFromDB?.email || "No User Email",
+        cart,
+        orderNumber
+      );
+
       navigate(`${ROUTES.ORDER_CONFIRMATION}?order_number=${orderNumber}`, {
         replace: true,
       });
