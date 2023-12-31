@@ -57,7 +57,7 @@ const MobileListProductCard: React.FC<Props> = ({
             <Grid
               container
               item
-              xs={2.5}
+              xs={2}
               sx={{
                 textAlign: "center",
                 display: "flex",
@@ -70,7 +70,7 @@ const MobileListProductCard: React.FC<Props> = ({
                 src={image.url}
                 alt={title}
                 style={{
-                  maxWidth: "100%",
+                  paddingRight: "10px",
                   width: "200px",
                   height: "80px",
                 }}

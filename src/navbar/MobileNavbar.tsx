@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { removeUser } from "../services/LocalStorageService";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes/routesModel";
 import SearchBar from "../search_filter/SearchBar";
@@ -34,32 +32,14 @@ const MobileNavbar: React.FC<Props> = ({
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-  //   null
-  // );
   const [totalItemsInCart, setTotalItemsInCart] = React.useState<number>(0);
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
-
-  // const handleLogout = () => {
-  //   removeUser(); // remove user from localStorage
-  //   setUser(null);
-  //   setToken(null);
-  //   handleCloseUserMenu();
-  //   navigate(ROUTES.ROOT);
-  // };
 
   const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -77,10 +57,6 @@ const MobileNavbar: React.FC<Props> = ({
 
   return (
     <>
-      {/* <AppBar
-        position="static"
-        sx={{ backgroundColor: "#5b9822", display: { md: "none" } }}
-      > */}
       {/* Mobile NavBar */}
       <Grid
         container
@@ -95,8 +71,6 @@ const MobileNavbar: React.FC<Props> = ({
           zIndex: 1000,
         }}
       >
-        {/* <Toolbar disableGutters> */}
-
         {/* top container */}
         <Grid
           container
@@ -183,7 +157,7 @@ const MobileNavbar: React.FC<Props> = ({
                 letterSpacing: ".3rem",
                 color: "#282828",
                 textDecoration: "none",
-                fontSize: "120%",
+                fontSize: "110%",
               }}
             >
               מרקט גבעת בית הכרם
@@ -272,30 +246,8 @@ const MobileNavbar: React.FC<Props> = ({
           >
             {showSearchBar && <SearchBar />}
           </Grid>
-
-          {/* Cart Icon */}
-          {/* {user && !showSearchBar && (
-              <Grid
-                item
-                display={"flex"}
-                justifyContent={"center"}
-                alignContent={"center"}
-                alignItems={"center"}
-                xs={showSearchBar ? 2 : 12}
-              >
-                <IconButton
-                  onClick={() => navigate(ROUTES.SHOPPING_CART)}
-                  aria-label="cart"
-                >
-                  <StyledBadge badgeContent={totalItemsInCart} color="default">
-                    <ShoppingCartIcon sx={{ color: "#282828", fontSize: 40 }} />
-                  </StyledBadge>
-                </IconButton>
-            )} */}
         </Grid>
-        {/* </Toolbar> */}
       </Grid>
-      {/* </AppBar> */}
     </>
   );
 };

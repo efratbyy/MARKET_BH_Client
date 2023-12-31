@@ -13,7 +13,6 @@ import {
   TableRow,
 } from "@mui/material";
 import PurchaseHistoryDetailsBreadCrumb from "./PurchesHistoryDetailsBreadCrumb";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import BackgroundImageLayout from "../layout/BackgroundImageLayout";
 
 const PurchaseHistoryDetails = () => {

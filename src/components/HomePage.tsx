@@ -136,7 +136,7 @@ const HomePage = () => {
               container
               item
               direction={"row-reverse"}
-              xs={5}
+              xs={6}
               md={6}
               sx={{
                 justifyItems: "center",
