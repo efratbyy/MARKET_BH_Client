@@ -78,7 +78,10 @@ const SideNavBar: React.FC<Props> = ({ showDataFilter = true }) => {
     >
       {/* Inbox Link */}
       <List>
-        <ListItem disablePadding onClick={() => navigate(`${ROUTES.ROOT}`)}>
+        <ListItem
+          disablePadding
+          onClick={() => navigate(`${ROUTES.EDIT_USER}`)}
+        >
           <ListItemButton>
             <ListItemIcon>
               <Person2TwoToneIcon />
@@ -130,10 +133,7 @@ const SideNavBar: React.FC<Props> = ({ showDataFilter = true }) => {
         </ListItem>
         <Divider />
 
-        <ListItem
-          disablePadding
-          onClick={() => navigate(`${ROUTES.ABOUT}`)}
-        >
+        <ListItem disablePadding onClick={() => navigate(`${ROUTES.ABOUT}`)}>
           <ListItemButton>
             <ListItemIcon>
               <AccessibilityNewIcon />
@@ -156,10 +156,7 @@ const SideNavBar: React.FC<Props> = ({ showDataFilter = true }) => {
         </ListItem>
         <Divider />
 
-        <ListItem
-          disablePadding
-          onClick={() => handleLogout()}
-        >
+        <ListItem disablePadding onClick={() => handleLogout()}>
           <ListItemButton>
             <ListItemIcon>
               <ExitToAppIcon />

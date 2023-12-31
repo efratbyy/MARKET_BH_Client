@@ -11,6 +11,7 @@ import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import GavelIcon from "@mui/icons-material/Gavel";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import PolicyIcon from "@mui/icons-material/Policy";
+import ContactPhoneTwoToneIcon from "@mui/icons-material/ContactPhoneTwoTone";
 
 const DesktopFooter = () => {
   const navigate = useNavigate();
@@ -181,6 +182,17 @@ const DesktopFooter = () => {
                   sx={{ color: "#555" }}
                 >
                   <HomeWorkIcon /> כתובתינו: החלוץ 72, ירושלים
+                </Button>
+              </Grid>
+
+              <Grid item xs={12} sx={{ paddingTop: "20px" }}>
+                <Button
+                  onClick={() => {
+                    navigate(ROUTES.CONTACT_INFORMATION);
+                  }}
+                  sx={{ color: "#555" }}
+                >
+                  <ContactPhoneTwoToneIcon /> צור קשר
                 </Button>
               </Grid>
             </Grid>

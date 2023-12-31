@@ -3,8 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import { getPurchaseHistoryDetailsApi } from "../apiService/userApiService";
 import { useUser } from "../providers/UserProvider";
 import { PurchaseHistoryInterface } from "../models/interfaces/interfaces.ts";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
 import {
   Grid,
   Table,
@@ -115,15 +113,15 @@ const PurchaseHistoryDetails = () => {
           sx={{
             fontSize: "25px",
             color: "blue",
-            paddingRight: "15%",
             zIndex: 1,
             position: "relative",
+            textAlign: "center",
           }}
         >
           סכום ההזמנה: ₪{totalAmountInOrder.toFixed(2)}
         </Grid>
 
-        <Grid item lg={6} xs={10}>
+        <Grid item lg={8} xs={12} sx={{ margin: "auto" }}>
           <TableContainer
             sx={{
               alignItems: "center",
@@ -141,10 +139,22 @@ const PurchaseHistoryDetails = () => {
                   <TableCell align="center" sx={headerCellStyle}>
                     הערות
                   </TableCell>
-                  <TableCell align="center" sx={headerCellStyle}>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      ...headerCellStyle,
+                      display: { xs: "none", md: "table-cell" },
+                    }}
+                  >
                     מותג
                   </TableCell>
-                  <TableCell align="center" sx={headerCellStyle}>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      ...headerCellStyle,
+                      display: { xs: "none", md: "table-cell" },
+                    }}
+                  >
                     ברקוד
                   </TableCell>
                   <TableCell align="center" sx={headerCellStyle}>
@@ -169,24 +179,51 @@ const PurchaseHistoryDetails = () => {
                       backgroundColor: index % 2 === 0 ? "#c4df9b" : "#d7ebbf",
                     }}
                   >
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{ ...cellStyle, width: "70px" }}
+                    >
                       {item.note}
                     </TableCell>
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{
+                        ...cellStyle,
+                        width: "45px",
+                        display: { xs: "none", md: "table-cell" },
+                      }}
+                    >
                       {item.brand}
                     </TableCell>
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{
+                        ...cellStyle,
+                        width: "45px",
+                        display: { xs: "none", md: "table-cell" },
+                      }}
+                    >
                       {item.barcode}
                     </TableCell>
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{ ...cellStyle, width: "40px" }}
+                    >
                       ₪{item.price.toFixed(2)}
                     </TableCell>
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{ ...cellStyle, width: "25px" }}
+                    >
                       {item.amount}
                     </TableCell>
                     <TableCell
                       align="center"
-                      sx={{ border: "1px solid black", borderRadius: "10px" }}
+                      sx={{
+                        border: "1px solid black",
+                        borderRadius: "10px",
+                        width: "40px",
+                      }}
                     >
                       <img
                         style={{
@@ -196,7 +233,10 @@ const PurchaseHistoryDetails = () => {
                         alt={item.image.alt}
                       />
                     </TableCell>
-                    <TableCell align="center" sx={cellStyle}>
+                    <TableCell
+                      align="center"
+                      sx={{ ...cellStyle, width: "40px" }}
+                    >
                       {item.title}
                     </TableCell>
                   </TableRow>

@@ -100,7 +100,7 @@ const PurchaseHistory = () => {
 
   return (
     <>
-      <BackgroundImageLayout backgroundImage="purchaseHistorybackground.png">
+      <BackgroundImageLayout backgroundImage="/assets/images/purchaseHistorybackground.png">
         <Typography
           variant="h1"
           sx={{
